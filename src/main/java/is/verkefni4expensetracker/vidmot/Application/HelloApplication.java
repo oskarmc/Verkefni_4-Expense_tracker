@@ -1,4 +1,4 @@
-package is.verkefni4expensetracker.Application;
+package is.verkefni4expensetracker.vidmot.Application;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

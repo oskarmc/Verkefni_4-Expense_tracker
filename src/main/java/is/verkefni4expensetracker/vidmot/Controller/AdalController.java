@@ -1,14 +1,18 @@
 package is.verkefni4expensetracker.vidmot.Controller;
 
+import is.verkefni4expensetracker.vinnsla.Expense;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 
 public class AdalController {
     @FXML
-    private Label welcomeText;
+    private ListView<Expense> fxListi;
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
-    }
+    private Button fxNyttFlokk;
+
+    @FXML
+    private Button fxEydaFlokk;
 }
