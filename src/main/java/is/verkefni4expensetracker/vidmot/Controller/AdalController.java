@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 
 public class AdalController {
+    //FXML
     @FXML
     private ListView<Expense> fxListi;
 
