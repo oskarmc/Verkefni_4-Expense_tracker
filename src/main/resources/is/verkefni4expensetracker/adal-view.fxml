@@ -33,12 +33,14 @@
 -->
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
   <children>
@@ -47,15 +49,35 @@
         <Menu fx:id="fxFlokkar" mnemonicParsing="false" text="Flokk" />
       </menus>
     </MenuBar>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="391.0" prefWidth="672.0" VBox.vgrow="ALWAYS">
       <children>
             <ListView fx:id="fxListi" layoutX="85.0" layoutY="35.0" prefHeight="247.0" prefWidth="469.0" />
-            <Button fx:id="fxNyttFlokk" layoutX="398.0" layoutY="303.0" mnemonicParsing="false" text="Bæta nýjan flokk">
+            <Button fx:id="fxNyttFlokk" layoutX="455.0" layoutY="303.0" mnemonicParsing="false" text="Bæta nýjan flokk">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button fx:id="fxEydaFlokk" layoutX="85.0" layoutY="303.0" mnemonicParsing="false" text="Eyða flokk">
+            <Button fx:id="fxEydaFlokk" layoutX="375.0" layoutY="303.0" mnemonicParsing="false" text="Eyða ">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Text fx:id="fxSummaTexti" layoutX="31.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Summa:">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Label fx:id="fxSummaLabel" layoutX="124.0" layoutY="305.0" text="0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Text fx:id="fxAppTexti" layoutX="264.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Útgjaldavakt">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Button fx:id="fxSkodaFlokk" layoutX="284.0" layoutY="303.0" mnemonicParsing="false" text="Skoða">
                <font>
                   <Font size="18.0" />
                </font>
