@@ -7,10 +7,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+public class TrackerApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("adal-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(TrackerApplication.class.getResource("/is/verkefni4expensetracker/adal-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
         stage.setTitle("Expense tracker");
         stage.setScene(scene);

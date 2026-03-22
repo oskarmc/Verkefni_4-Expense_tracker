@@ -21,4 +21,8 @@ public class ExpenseList {
     public void removeCategory(Expense expense) {
         expenseCategories.remove(expense);
     }
+
+    public ExpenseList(){
+        new Expense("bil", 10000);
+    }
 }
