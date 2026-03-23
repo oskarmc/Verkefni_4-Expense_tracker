@@ -2,6 +2,7 @@ package is.verkefni4expensetracker.vidmot.Controller;
 
 import is.verkefni4expensetracker.vinnsla.Category;
 import is.verkefni4expensetracker.vinnsla.CategoryList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
@@ -17,10 +18,25 @@ public class AdalController {
     @FXML
     private Button fxEydaFlokk;
 
+    @FXML
+    private Button fxSkodaFlokk;
+
     private final CategoryList categoryList = CategoryList.getInstance();
 
     @FXML
     private void initialize() {
-        fxListi.setItems(categoryList.getExpenses());
+        fxListi.setItems(categoryList.getCategories());
+
+        fxSkodaFlokk.disableProperty().bind(
+                fxListi.getSelectionModel().selectedItemProperty().isNull()
+        );
+
+        fxEydaFlokk.disableProperty().bind(
+                fxListi.getSelectionModel().selectedItemProperty().isNull()
+        );
+    }
+
+    public void onNyttFlokk(ActionEvent actionEvent) {
+
     }
 }

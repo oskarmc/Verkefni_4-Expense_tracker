@@ -16,5 +16,27 @@ public class Category {
         this.nameOfCategory.set(nameOfCategory);
     }
 
+    public StringProperty nameOfCategoryProperty() { return nameOfCategory; }
+
+    public String getNameOfCategory() { return nameOfCategory.get(); }
+
+    public void setNameOfCategory(String nameOfCategory) { this.nameOfCategory.set(nameOfCategory); }
+
+    public ObservableList<Transaction> getTransactions() { return transactions; }
+
+    public void addTransaction(Transaction transaction) {
+        transactions.add(transaction);
+    }
+
+    public void removeTransaction(Transaction transaction) {
+        transactions.remove(transaction);
+    }
+
+    public int getTotalSum() {
+        return transactions.stream().mapToInt(Transaction::getAmount).sum();
+    }
+
+    @Override
+    public String toString() {return nameOfCategory.get() + " - " + getTotalSum() + "kr";}
 
 }
