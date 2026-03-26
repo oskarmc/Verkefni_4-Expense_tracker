@@ -8,4 +8,6 @@ module is.verkefni4expensetracker {
     opens is.verkefni4expensetracker.vidmot.Application to javafx.fxml;
     exports is.verkefni4expensetracker.vidmot.Controller;
     opens is.verkefni4expensetracker.vidmot.Controller to javafx.fxml;
+    exports is.verkefni4expensetracker.vinnsla;
+    opens is.verkefni4expensetracker.vinnsla to javafx.fxml;
 }

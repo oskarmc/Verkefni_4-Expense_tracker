@@ -1,3 +1,4 @@
+/*
 package is.verkefni4expensetracker.vidmot.Switcher;
 
 import is.verkefni4expensetracker.vidmot.Switcher.View;
@@ -58,3 +59,4 @@ public class ViewSwitcher {
         return controllers.get(view);
     }
 }
+*/

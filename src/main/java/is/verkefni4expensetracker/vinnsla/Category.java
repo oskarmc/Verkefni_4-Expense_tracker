@@ -8,33 +8,57 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class Category {
-    private StringProperty nameOfCategory = new SimpleStringProperty();
+    private final StringProperty nameOfCategory = new SimpleStringProperty();
 
-    private ObservableList<Transaction> transactions = FXCollections.observableArrayList();
+    private final StringProperty description = new SimpleStringProperty();
 
-    public Category(String nameOfCategory) {
-        this.nameOfCategory.set(nameOfCategory);
-    }
+
+    private final ObservableList<Transaction> transactions = FXCollections.observableArrayList();
+
+
 
     public StringProperty nameOfCategoryProperty() { return nameOfCategory; }
+
+    public StringProperty descriptionProperty() { return description; }
+
 
     public String getNameOfCategory() { return nameOfCategory.get(); }
 
     public void setNameOfCategory(String nameOfCategory) { this.nameOfCategory.set(nameOfCategory); }
 
+
+    public String getDescription() { return description.get(); }
+
+    public void setDescription(String description) { this.description.set(description); }
+
+
     public ObservableList<Transaction> getTransactions() { return transactions; }
+
+
+    public Category(String name, String description) {
+        this.nameOfCategory.set(name);
+        this.description.set(description);
+    }
+
+    public Category(String name) { this(name, ""); }
+
+    public Category() { this("", ""); }
+
 
     public void addTransaction(Transaction transaction) {
         transactions.add(transaction);
     }
 
+
     public void removeTransaction(Transaction transaction) {
         transactions.remove(transaction);
     }
 
+
     public int getTotalSum() {
         return transactions.stream().mapToInt(Transaction::getAmount).sum();
     }
+
 
     @Override
     public String toString() {return nameOfCategory.get() + " - " + getTotalSum() + "kr";}
