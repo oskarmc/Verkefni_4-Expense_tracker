@@ -10,7 +10,7 @@
 
 <DialogPane xmlns="http://javafx.com/javafx/25"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="is.verkefni4expensetracker.vidmot.Controller.CategoryDialogController">
+            fx:controller="is.verkefni4expensetracker.vidmot.Controller.BaetaController">
    <content>
       <VBox spacing="10">
          <Text text="Bæta nýtt flokk">

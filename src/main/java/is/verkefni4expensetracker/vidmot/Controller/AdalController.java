@@ -37,6 +37,13 @@ public class AdalController {
     }
 
     public void onNyttFlokk(ActionEvent actionEvent) {
+        BaetaDialogWrapper.birtaDialog(
+                fxListi.getScene().getWindow()
+        ).ifPresent(category -> categoryList.addCategory(category));
+    }
 
+    public void onEydaFlokk() {
+        Category valin = fxListi.getSelectionModel().getSelectedItem();
+        categoryList.removeCategory(valin);
     }
 }
