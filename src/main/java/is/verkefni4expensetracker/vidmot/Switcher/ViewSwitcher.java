@@ -1,6 +1,7 @@
-/*
+
 package is.verkefni4expensetracker.vidmot.Switcher;
 
+import is.verkefni4expensetracker.vidmot.Controller.GognInterface;
 import is.verkefni4expensetracker.vidmot.Switcher.View;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -32,8 +33,9 @@ public class ViewSwitcher {
             root = cache.get(view);
         } else{
             try {
+                System.out.println("Trying to load: " + ViewSwitcher.class.getResource("/is/verkefni4expensetracker/" + view.getFileName()));
                 FXMLLoader loader = new FXMLLoader(
-                        ViewSwitcher.class.getResource("/is/" + view.getFileName())
+                        ViewSwitcher.class.getResource("/is/verkefni4expensetracker/" + view.getFileName())
                 );
                 root = loader.load();
                 cache.put(view, root);
@@ -41,7 +43,7 @@ public class ViewSwitcher {
             } catch(IOException e){
                 e.printStackTrace();
                 System.out.println("Failed to load: " + view.getFileName());
-                System.out.println("Resource URL: " + ViewSwitcher.class.getResource("/is/" + view.getFileName()));
+                System.out.println("Resource URL: " + ViewSwitcher.class.getResource("/is/verkefni4expensetracker/" + view.getFileName()));
             }
         }
 
@@ -59,4 +61,3 @@ public class ViewSwitcher {
         return controllers.get(view);
     }
 }
-*/

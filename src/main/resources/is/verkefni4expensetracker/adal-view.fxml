@@ -47,7 +47,7 @@
                   <Font size="20.0" />
                </font>
             </Text>
-            <Button fx:id="fxSkodaFlokk" layoutX="284.0" layoutY="303.0" mnemonicParsing="false" text="Skoða">
+            <Button fx:id="fxSkodaFlokk" onAction="#onSkodaFlokk" layoutX="284.0" layoutY="303.0" mnemonicParsing="false" text="Skoða">
                <font>
                   <Font size="18.0" />
                </font>

@@ -1,5 +1,7 @@
 package is.verkefni4expensetracker.vidmot.Controller;
 
+import is.verkefni4expensetracker.vidmot.Switcher.View;
+import is.verkefni4expensetracker.vidmot.Switcher.ViewSwitcher;
 import is.verkefni4expensetracker.vinnsla.Category;
 import is.verkefni4expensetracker.vinnsla.CategoryList;
 import javafx.event.ActionEvent;
@@ -45,5 +47,11 @@ public class AdalController {
     public void onEydaFlokk() {
         Category valin = fxListi.getSelectionModel().getSelectedItem();
         categoryList.removeCategory(valin);
+    }
+
+    @FXML
+    private void onSkodaFlokk() {
+        Category valin = fxListi.getSelectionModel().getSelectedItem();
+        ViewSwitcher.switchTo(View.FLOKKUR, false, valin);
     }
 }

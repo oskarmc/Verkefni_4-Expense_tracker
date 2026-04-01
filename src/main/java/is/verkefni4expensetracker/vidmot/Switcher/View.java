@@ -5,7 +5,7 @@ public enum View {
     ADAL("adal-view.fxml"),
 
     // FXML skrá sem sýnir upplýsinga um valin ferð
-    FERD("ferd-view.fxml");
+    FLOKKUR("flokkur-view.fxml");
 
     private final String fileName;
 
