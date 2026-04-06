@@ -5,4 +5,4 @@ Forrit sýnir summu alla flokka og hægt er að fara í flokk til að sjá útgj
 Útgjöld er hægt að bæta (Nafn útgjalds, kostnaður og dagsetning) þegar farið er í flokk. Það er líka hægt að eyða þeim.
 
 # Hvernig á að keyra verkefni?
-Það er nóg að sækja forrit úr GitHub og keyra það með JavaFx run.
+Það er nóg að sækja forrit úr GitHub og keyra það með JavaFx run í Plugins (intellij).
