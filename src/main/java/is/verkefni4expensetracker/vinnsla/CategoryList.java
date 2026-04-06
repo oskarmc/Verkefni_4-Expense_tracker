@@ -23,4 +23,6 @@ public class CategoryList {
     public void addCategory(Category c) { categories.add(c); }
 
     public void removeCategory(Category c) {  categories.remove(c); }
+
+
 }
