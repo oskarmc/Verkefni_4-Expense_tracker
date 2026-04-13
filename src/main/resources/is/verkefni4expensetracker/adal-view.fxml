@@ -22,12 +22,12 @@
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="391.0" prefWidth="672.0" VBox.vgrow="ALWAYS">
       <children>
             <ListView fx:id="fxListi" layoutX="85.0" layoutY="35.0" prefHeight="247.0" prefWidth="469.0" />
-            <Button fx:id="fxNyttFlokk" onAction="#onNyttFlokk" layoutX="455.0" layoutY="303.0" mnemonicParsing="false" text="Bæta nýjan flokk">
+            <Button fx:id="fxNyttFlokk" styleClass="primary-button" onAction="#onNyttFlokk" layoutX="455.0" layoutY="303.0" mnemonicParsing="false" text="Bæta nýjan flokk">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button fx:id="fxEydaFlokk" onAction="#onEydaFlokk" layoutX="375.0" layoutY="303.0" mnemonicParsing="false" text="Eyða ">
+            <Button fx:id="fxEydaFlokk" styleClass="primary-button" onAction="#onEydaFlokk" layoutX="375.0" layoutY="303.0" mnemonicParsing="false" text="Eyða ">
                <font>
                   <Font size="18.0" />
                </font>
@@ -47,7 +47,7 @@
                   <Font size="20.0" />
                </font>
             </Text>
-            <Button fx:id="fxSkodaFlokk" onAction="#onSkodaFlokk" layoutX="284.0" layoutY="303.0" mnemonicParsing="false" text="Skoða">
+            <Button fx:id="fxSkodaFlokk" styleClass="primary-button" onAction="#onSkodaFlokk" layoutX="284.0" layoutY="303.0" mnemonicParsing="false" text="Skoða">
                <font>
                   <Font size="18.0" />
                </font>
