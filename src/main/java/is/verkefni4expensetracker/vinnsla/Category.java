@@ -40,6 +40,7 @@ public class Category {
         this.description.set(description);
     }
 
+
     public Category(String name) { this(name, ""); }
 
     public Category() { this("", ""); }

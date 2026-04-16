@@ -4,6 +4,7 @@ import is.verkefni4expensetracker.vidmot.Switcher.View;
 import is.verkefni4expensetracker.vidmot.Switcher.ViewSwitcher;
 import is.verkefni4expensetracker.vinnsla.Category;
 import is.verkefni4expensetracker.vinnsla.CategoryList;
+import is.verkefni4expensetracker.vinnsla.Transaction;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -30,43 +31,52 @@ public class AdalController {
 
     private final CategoryList categoryList = CategoryList.getInstance();
 
+
     @FXML
     private void initialize() {
         fxListi.setItems(categoryList.getCategories());
         updateSumma();
-        categoryList.getCategories().addListener((javafx.collections.ListChangeListener<Category>) change -> updateSumma());
 
-        fxSkodaFlokk.disableProperty().bind(
-                fxListi.getSelectionModel().selectedItemProperty().isNull()
-        );
-
-        fxEydaFlokk.disableProperty().bind(
-                fxListi.getSelectionModel().selectedItemProperty().isNull()
-        );
-
-        for (Category c : categoryList.getCategories()) {
-            addFlokkToMenu(c);
-        }
-
-// listen for changes
+        // Listen for new/removed categories
         categoryList.getCategories().addListener((javafx.collections.ListChangeListener<Category>) change -> {
+            updateSumma();
+            // Add transaction listener to any newly added category
             while (change.next()) {
-
                 if (change.wasAdded()) {
                     for (Category c : change.getAddedSubList()) {
+                        c.getTransactions().addListener(
+                                (javafx.collections.ListChangeListener<Transaction>) t -> updateSumma()
+                        );
                         addFlokkToMenu(c);
                     }
                 }
 
-                if (change.wasRemoved()) {
+                if(change.wasRemoved()) {
                     for (Category c : change.getRemoved()) {
                         removeFlokkFromMenu(c);
                     }
                 }
             }
-
-            updateSumma(); // keep your existing logic
         });
+
+        // Add transaction listener to existing categories and menubar
+        for (Category c : categoryList.getCategories()) {
+            c.getTransactions().addListener(
+                    (javafx.collections.ListChangeListener<Transaction>) t -> {
+                        updateSumma();
+                        fxListi.refresh();
+                    }
+            );
+            addFlokkToMenu(c);
+        }
+
+        fxSkodaFlokk.disableProperty().bind(
+                fxListi.getSelectionModel().selectedItemProperty().isNull()
+        );
+        fxEydaFlokk.disableProperty().bind(
+                fxListi.getSelectionModel().selectedItemProperty().isNull()
+        );
+
     }
 
     public void onNyttFlokk(ActionEvent actionEvent) {
